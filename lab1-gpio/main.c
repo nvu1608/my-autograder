@@ -25,37 +25,37 @@ int main(void)
 	GPIO_InitTypeDef gpioInit;
 	TIM_TimeBaseInitTypeDef timerInit;
 	
-	// RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
-	// RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
-	// RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
 	
-	// gpioInit.GPIO_Mode = GPIO_Mode_Out_PP;
-	// gpioInit.GPIO_Pin = GPIO_Pin_13;
-	// gpioInit.GPIO_Speed = GPIO_Speed_50MHz;
+	gpioInit.GPIO_Mode = GPIO_Mode_Out_PP;
+	gpioInit.GPIO_Pin = GPIO_Pin_13;
+	gpioInit.GPIO_Speed = GPIO_Speed_50MHz;
 	
-	// GPIO_Init(GPIOC, &gpioInit);
+	GPIO_Init(GPIOC, &gpioInit);
 	
-	// gpioInit.GPIO_Mode = GPIO_Mode_Out_PP;
-	// gpioInit.GPIO_Pin = GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
-	// gpioInit.GPIO_Speed = GPIO_Speed_50MHz;
+	gpioInit.GPIO_Mode = GPIO_Mode_Out_PP;
+	gpioInit.GPIO_Pin = GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
+	gpioInit.GPIO_Speed = GPIO_Speed_50MHz;
 	
-	// GPIO_Init(GPIOB, &gpioInit);
+	GPIO_Init(GPIOB, &gpioInit);
 	
-	// timerInit.TIM_CounterMode = TIM_CounterMode_Up;
-	// timerInit.TIM_Period = 0xFFFF;
-	// timerInit.TIM_Prescaler = 72 - 1;
+	timerInit.TIM_CounterMode = TIM_CounterMode_Up;
+	timerInit.TIM_Period = 0xFFFF;
+	timerInit.TIM_Prescaler = 72 - 1;
 	
-	// TIM_TimeBaseInit(TIM2, &timerInit);
+	TIM_TimeBaseInit(TIM2, &timerInit);
 	
-	// TIM_Cmd(TIM2, ENABLE);
+	TIM_Cmd(TIM2, ENABLE);
 	
 	
-	// while (1) {
-	// 	GPIO_SetBits(GPIOC, GPIO_Pin_13);
-	// 	//GPIO_SetBits(GPIOB, GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
-	// 	Delay_Ms(100);
-	// 	GPIO_ResetBits(GPIOC, GPIO_Pin_13);
-	// 	//GPIO_ResetBits(GPIOB, GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
-	// 	Delay_Ms(100);
-	// }
+	while (1) {
+		GPIO_SetBits(GPIOC, GPIO_Pin_13);
+		//GPIO_SetBits(GPIOB, GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
+		Delay_Ms(100);
+		GPIO_ResetBits(GPIOC, GPIO_Pin_13);
+		//GPIO_ResetBits(GPIOB, GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
+		Delay_Ms(100);
+	}
 }
