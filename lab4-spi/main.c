@@ -20,7 +20,7 @@ int main(void)
     usart1_init(9600);
     spi1_init();
 
-    const uint8_t msg[] = "Hello ESP32-S3";
+    const uint8_t msg[] = "9";
     uint16_t len = sizeof(msg) - 1;
 
     while (1)
@@ -33,8 +33,9 @@ int main(void)
         // Kéo CS lên HIGH ? k?t thúc truy?n
         GPIO_SetBits(GPIOA, GPIO_Pin_4);
 
-        usart1_send_string("SPI sent: Hello ESP32-S3\n");
+        // usart1_send_string("9");
         delay_ms(1000);
+			
     }
 }
 
