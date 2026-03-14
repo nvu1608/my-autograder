@@ -5,7 +5,9 @@
 #define I2C_SCL_Pin     GPIO_Pin_6
 #define I2C_SDA_Pin     GPIO_Pin_7
 
-#define LCD_ADDR        0x27
+// #define LCD_ADDR        0x27
+#define LCD_ADDR        0x3F
+
 
 #define LCD_BACKLIGHT   0x08
 #define ENABLE_BIT      0x04
